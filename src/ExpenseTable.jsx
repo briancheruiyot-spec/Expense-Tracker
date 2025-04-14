@@ -28,7 +28,10 @@ const ExpenseTable = ({ expenses, onDelete, onSort, sortConfig }) => {
               <td className="amount-cell">
                 {expense.amount}
                 <button 
-                  onClick={() => onDelete(expense.id)}
+                  onClick={(e) => {
+                    e.stopPropagation()
+                    onDelete(expense.id)
+                  }}
                   className="delete-btn"
                   aria-label="Delete expense"
                 >
@@ -40,7 +43,7 @@ const ExpenseTable = ({ expenses, onDelete, onSort, sortConfig }) => {
         ) : (
           <tr>
             <td colSpan="3" className="empty-message">
-              {expenses.length === 0 ? 'No expenses added' : 'No matching expenses found'}
+              {expenses.length === 0 ? 'No expenses added yet' : 'No matching expenses found'}
             </td>
           </tr>
         )}

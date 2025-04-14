@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import ExpenseTable from './ExpenseTable'
 import AddExpenseForm from './AddExpenseForm'
 import SearchBar from './SearchBar'
@@ -7,7 +7,14 @@ import './App.css'
 function App() {
   const [expenses, setExpenses] = useState([])
   const [searchTerm, setSearchTerm] = useState('')
-  const [sortConfig, setSortConfig] = useState({ key: null, direction: 'asc' })
+  const [sortConfig, setSortConfig] = useState({ key: 'name', direction: 'asc' })
+
+  // Auto-sort by name when search term changes
+  useEffect(() => {
+    if (searchTerm) {
+      setSortConfig({ key: 'name', direction: 'asc' })
+    }
+  }, [searchTerm])
 
   const addExpense = (newExpense) => {
     setExpenses([...expenses, { 
