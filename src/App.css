@@ -169,3 +169,37 @@ h1 {
     font-size: 2rem;
   }
 }
+
+.amount-cell {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.delete-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ff4d4f;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 0.9rem;
+  font-weight: bold;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  padding: 0;
+}
+
+.delete-btn:hover {
+  background-color: #e6393f;
+}
+
+.delete-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(255, 77, 79, 0.3);
+}
+
