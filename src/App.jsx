@@ -23,10 +23,15 @@ function App() {
 
   return (
     <div className="app">
-      <h1>Expense Tracker</h1>
-      <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
-      <AddExpenseForm onAddExpense={addExpense} />
-      <ExpenseTable expenses={filteredExpenses} />
+      <div className="header-and-form">
+        <h1>Expense Tracker</h1>
+        <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+        <AddExpenseForm onAddExpense={addExpense} />
+      </div>
+      
+      <div className="expense-table-container">
+        <ExpenseTable expenses={filteredExpenses} />
+      </div>
     </div>
   )
 }
