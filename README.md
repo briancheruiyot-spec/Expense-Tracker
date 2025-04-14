@@ -1,12 +1,63 @@
-# React + Vite
+# 💸 Expense Tracker App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive React app to track your daily expenses with ease. Add, search, sort, and delete expenses,all in a clean UI.
 
-Currently, two official plugins are available:
+## 🛠 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Add expenses with name, category, and amount
+- Search through expenses by name or category
+- Sort expenses alphabetically by name or category
+- Delete individual expenses
+- Responsive, minimalist UI with modern CSS styling
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **React** (Vite)
+- **JavaScript**
+- **CSS**
+
+---
+
+## 🚀 Getting Started
+
+### 1. Clone the Repo
+
+
+git clone https://github.com/your-username/expense-tracker.git
+cd expense-tracker
+
+2. Install Dependencies
+Using npm:
+npm install
+
+3. Run the App
+npm run dev
+ 
+## Project Structure
+src/
+├── App.jsx              # Main component
+├── AddExpenseForm.jsx   # Form to add new expense
+├── ExpenseTable.jsx     # Table to display expenses
+├── SearchBar.jsx        # Input for filtering expenses
+├── App.css              # Styling for the app
+└── main.jsx             # App entry point
+ 
+## Styling Overview (App.css)
+ - Responsive grid layout for form fields
+
+ - Modern inputs and buttons with hover/focus transitions
+
+ - Red delete button with centered white × icon
+
+ - Sort indicators (↑ ↓) on sortable headers
+
+## License
+ - MIT License
+
+## Acknowledgements
+ - Inspired by daily budgeting needs and the joy of clean UIs ✨
+   Built using React.
+
+## Author
+ - Brian Cheruiyot
+ - GitHub • briancheruiyot-spec
