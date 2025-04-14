@@ -4,18 +4,31 @@ import AddExpenseForm from './AddExpenseForm'
 import SearchBar from './SearchBar'
 import './App.css'
 
-function App () {
+function App() {
+  const [expenses, setExpenses] = useState([])
+  const [searchTerm, setSearchTerm] = useState('')
 
+  const addExpense = (newExpense) => {
+    setExpenses([...expenses, { 
+      ...newExpense, 
+      id: expenses.length + 1,
+      amount: parseFloat(newExpense.amount)
+    }])
+  }
 
+  const filteredExpenses = expenses.filter(expense => 
+    expense.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    expense.category.toLowerCase().includes(searchTerm.toLowerCase())
+  )
 
   return (
-  <div className="app">
-    <h1>Expense Tracker</h1>
-    <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
-    <AddExpenseForm onAddExpense={addExpense} />
-    <ExpenseTable expenses={filteredExpenses} />
-  </div>
-)
+    <div className="app">
+      <h1>Expense Tracker</h1>
+      <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+      <AddExpenseForm onAddExpense={addExpense} />
+      <ExpenseTable expenses={filteredExpenses} />
+    </div>
+  )
 }
 
 export default App
